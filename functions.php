@@ -11,6 +11,10 @@ function simple_theme_setup()
     // Featured Image Support
     add_theme_support('post-thumbnails');
 
+    // Custom Logo
+    add_theme_support('custom-logo');
+
+
      //Menus
      register_nav_menus(array(
         'primary' => __('Primary Menu')

@@ -26,7 +26,18 @@
                                 <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
                                     <button class="menu-icon" type="button" data-toggle></button>
                                 </span>
-                                <a href="index.html"><img class="logo" src="images/j-logo.jpg" alt="company logo"></a>
+                                <!-- <a href="index.html">
+                                    <img class="logo" src="images/j-logo.jpg" alt="company logo" />
+                                </a> -->
+                                <?php 
+                                    if(function_exists('the_custom_logo')){
+                                    the_custom_logo();
+                                    }else{
+                                    bloginfo('name');
+                                    }
+                                ?>
+
+                                
                             </div>
                             <div id="responsive-menu">
                                 <?php
