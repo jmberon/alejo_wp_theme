@@ -20,6 +20,7 @@
         <div class="grid-container">
             <div class="grid-x grid-padding-x">
                 <div class="cell">
+                    
                     <nav class="sticky sticky-topbar" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
                         <div class="top-bar topbar-responsive">
                             <div class="top-bar-title">
@@ -47,54 +48,16 @@
                                 );
                                 ?>
                                 <?php wp_nav_menu($args); ?>
-
-                                <!-- 
-                            <ul class="horizontal menu dropdown align-right" data-dropdown-menu="drilldown medium-dropdown" data-auto-height="true" data-animate-height="true">
-                                <li class="is-active"><a href="index.html">Home</a></li>
-                                <li>
-                                    <a href="poetry.html">Poetry</a>
-                                    <ul class="menu horizontal">
-                                        <li><a href="poetry.html#poems">Poems</a></li>
-                                        <li><a href="poetry.html#illustrated poetry">Illustrated Poetry</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="theatre.html">Theatre</a></li>
-                                <li><a href="design.html">Design</a></li>
-                    <li>
-                        <a href="film.html">Film</a>
-                        <ul class="menu horizontal">
-                            <li><a href="film.html#storyboarding">Storyboarding</a></li>
-                            <li><a href="film.html@concept art">Concept Art</a></li>
-                            <li><a href="film.html@independent creations">Independent Creations</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="sculptures.html">Sculptures</a></li>
-                    <li><a href="illustrations.html">Illustrations</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul> 
-                -->
-
                             </div>
                         </div>
                     </nav>
+                    
                 </div>
             </div>
         </div>
 
         <?php
-        /*
-    <nav class="main-nav">
-    <div class="container">
-    <?php 
-                $args = array(
-                'theme_location' => 'primary'
-                ); 
-            ?>
-        <?php wp_nav_menu($args); ?>
-        </div>
-    </nav>
-    */
+
         ?>
     </header>
 

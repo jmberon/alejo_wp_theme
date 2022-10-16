@@ -1,3 +1,8 @@
 /*
     Theme Name: Alejo2022
 */
+
+header {
+    position: sticky;
+    top: 20px;
+}
