@@ -1,7 +1,7 @@
-var btn = $('#button-up');
+var btn = jQuery('#button-up');
 
-$(window).scroll(function() {
-  if ($(window).scrollTop() > 300) {
+jQuery(window).scroll(function() {
+  if (jQuery(window).scrollTop() > 300) {
     btn.addClass('show');
   } else {
     btn.removeClass('show');
@@ -9,6 +9,6 @@ $(window).scroll(function() {
 });
 
 btn.on('click', function(e) {
-  $('html, body').animate({scrollTop:0}, '300');
+  jQuery('html, body').animate({scrollTop:0}, '300');
 });
 

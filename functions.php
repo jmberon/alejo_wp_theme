@@ -46,6 +46,16 @@ function set_excerpt_length()
 
 add_filter('excerpt_length', 'set_excerpt_length');
 
+
+function special_nav_class ($classes, $item) {
+    if (in_array('current-menu-item', $classes) ){
+        $classes[] = 'is-active';
+    }
+    return $classes;
+}
+
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
  //Widget Locations
  function init_widgets($id){
     register_sidebar(array(
