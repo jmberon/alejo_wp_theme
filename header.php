@@ -3,11 +3,13 @@
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <title><?php bloginfo('name'); ?></title>
+    
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css" crossorigin="anonymous">
+
+  
 
     <?php wp_head(); ?>
 </head>
@@ -25,16 +27,18 @@
                                 <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
                                     <button class="menu-icon" type="button" data-toggle></button>
                                 </span>
-                                <!-- <a href="index.html">
+                                <!-- 
                                     <img class="logo" src="images/j-logo.jpg" alt="company logo" />
-                                </a> -->
+                                 -->
+                                <a href="index.html">
                                 <?php 
-                                    if(function_exists('the_custom_logo')){
-                                    the_custom_logo();
-                                    }else{
-                                    bloginfo('name');
-                                    }
+                                if(function_exists('the_custom_logo')){
+                                  the_custom_logo();
+                                }else{
+                                  bloginfo('name');
+                                }
                                 ?>
+                                </a>
 
                                 
                             </div>
@@ -59,11 +63,29 @@
         ?>
     </header>
 
-    <!-- HERO  -->
-    <div class="hero-section">
-        <div class="hero-section-text">
-            <h1>Jerry Verschoor</h1>
-            <h5>Portfolio Website</h5>
-        </div>
+  <!-- HERO  -->
+
+  <div class="hero-section">
+    <div class="hero-section-text">
+      <!--div class="banner">
+      <php if(get_theme_mod('header_image')) :?>
+      <img src="<php echo esc_url(get_theme_mod('headeer_image')) ?>"  alt="banner">
+      <php Endif;?>
+      </div-->
+      <!--<h1>Jerry Verschoor</h1>-->
+
+      <?php if(get_theme_mod('header_text_field')) :?>
+        <h1><?php echo get_theme_mod('header_text_field') ?></h1>
+      <?php Endif;?>
+
+      <!-- <h5>Portfolio Website</h5> --> 
+
+      <?php if(get_theme_mod('header_desc_field')) :?>
+        <h5><?php echo get_theme_mod('header_desc_field')?></h5>
+      <?php Endif;?>
+
     </div>
-    <!-- *** END HERO ***-->
+  </div>
+<!-- *** END HERO ***-->
+  
+ 

@@ -1,9 +1,14 @@
 <?php
+/* 
+    Template Name: functions.php
+    Description: Adding features to wordpress theme
+
+*/
 
 function add_theme_scripts() {    
     wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.1', 'all');
 
-    wp_register_script('jquery', get_template_directory_uri(). '/assets/js/vendor/jquery.js');
+    wp_register_script('jquery', get_template_directory_uri(). '/assets/js/vendor/jquery.js',);
     wp_enqueue_script('jquery');
     
     wp_register_script('input', get_template_directory_uri(). '/assets/js/vendor/what-input.js');
@@ -26,6 +31,8 @@ function simple_theme_setup()
     // Featured Image Support
     add_theme_support('post-thumbnails');
 
+    add_theme_support('title-tag');
+
     // Custom Logo
     add_theme_support('custom-logo');
 
@@ -35,8 +42,67 @@ function simple_theme_setup()
         'primary' => __('Primary Menu')
     ));
 }
-
 add_action('after_setup_theme', 'simple_theme_setup');
+
+
+
+
+//WP_Customize_Control (change side title and tagline, add widgets to a sidebar, o footer, change home settings)
+function customizer_settings($wp_customizer){
+
+    //add a customizer setting
+
+    //include new section
+    $wp_customizer->add_section('header',array(
+        'title'=> __('Header Settings'),
+        'priority'=>70
+    ));
+
+    //add capability to customizer setting
+    $wp_customizer->add_setting('header_image',array(
+        'capability'=> 'edit_theme_options'
+    ));
+
+
+    //add the controls in the customizer settings
+    $wp_customizer-> add_control(new WP_Customize_Image_Control($wp_customizer,'header_image',array(
+        'label'=>__('Header Image'),
+        'section'=>'header'
+    )));
+
+    //add header text setting
+    $wp_customizer->add_setting('header_text_field',array(
+        'capability'=> 'edit_theme_options',
+        'default'=>'Title'
+    ));
+
+    // the text control description title
+    $wp_customizer->add_control('header_text_conrtrol',array(
+        'label'=>__('Header Text'),
+        'description'=>'Change Header Text',
+        'section'=>'header',
+        'settings'=>'header_text_field'
+    ));
+
+     //add header text setting
+     $wp_customizer->add_setting('header_desc_field',array(
+        'capability'=> 'edit_theme_options',
+        'default'=>'Description'
+    ));
+
+    // the text control
+    $wp_customizer->add_control('header_description_conrtrol',array(
+        'label'=>__('Header Description'),
+        'description'=>'Change Header Description',
+        'section'=>'header',
+        'settings'=>'header_desc_field'
+    ));
+
+}
+add_action('customize_register','customizer_settings');
+
+
+add_theme_support('custom-background');
 
 // Excerpt Length
 function set_excerpt_length()
